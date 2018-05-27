@@ -45,7 +45,7 @@ sudo chmod g+rwx "/home/$USER/.docker" -R
 
 Run Server
 ~~~
-./bin/start [имя контейнера, по-умолчанию все контейнеры]
+./bin/start
 ~~~
 
 Stop server
