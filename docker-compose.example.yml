@@ -1,0 +1,61 @@
+version: '2'
+services:
+
+#---------------------------------------------
+#                 Redis config
+#---------------------------------------------
+  redis:
+    build: ./build/redis
+    volumes:
+      - ${DATA_SAVE_PATH}/redis/logs:/var/log
+      - ${DATA_SAVE_PATH}/redis/data:/data
+    expose:
+      - 6379
+    networks:
+      - server
+
+#---------------------------------------------
+#            MEMCACHED config
+#---------------------------------------------
+  memcached:
+    build: ./build/memcached
+    volumes:
+      - ${DATA_SAVE_PATH}/memcached:/var/lib/memcached
+    expose:
+      - 11211
+    networks:
+      - server
+
+#---------------------------------------------
+#            SERVER config
+#---------------------------------------------
+  server:
+    build:
+      context: ./build/server
+      args:
+        - TZ=${TIMEZONE}
+        - WORKDIR=${APP_PATH}
+        - GIT_TOKEN=${GIT_TOKEN}
+    ports:
+      - "${LISTEN_PORT}:3000"
+    environment:
+      - LISTEN_IP=${LISTEN_IP}
+      - MEMCACHE_HOST=${MEMCACHE_HOST}
+      - MEMCACHE_PORT=${MEMCACHE_PORT}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PORT=${MYSQL_PORT}
+      - MYSQL_DB=${MYSQL_DB}
+      - GIT_TOKEN=${GIT_TOKEN}
+    volumes:
+      - ./app:${APP_PATH}
+    networks:
+      - server
+    depends_on:
+      - memcached
+
+networks:
+  server:
+    driver: "bridge"

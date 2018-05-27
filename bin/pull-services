@@ -1,0 +1,6 @@
+#/bin/bash
+
+# Pulling all services
+
+git submodule init
+git submodule update

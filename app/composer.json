@@ -1,0 +1,20 @@
+{
+  "name": "whenspeak.ru/controll 2.0",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Rustam Dasaev",
+      "email": "rd@whenspeak.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": ""
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "nikic/fast-route": "dev-master",
+    "colinmollenhour/credis": "dev-master"
+  }
+}
