@@ -6,7 +6,8 @@ Swoole Server testing
 Before install:
 1. Check your github token
 2. Copy .env.example to .env (add github token to GIT_TOKEN) and docker-compose.example.yml to docker-compose.yml
-4. Setup SERVER listen IPs and port
+3. Setup SERVER listen IPs and port
+4. Copy app/config/config.example.php to app/config/config.php  
 ~~~
 
 Docker install:
@@ -23,7 +24,7 @@ Check after install:
 sudo docker run hello-world
 ~~~
 
-#####Without sudo run
+Without sudo run
 ~~~
 sudo groupadd docker
 ~~~
