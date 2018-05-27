@@ -52,3 +52,11 @@ Stop server
 ~~~
 ./bin/stop
 ~~~
+
+Example (if server runs on port 3000):
+~~~
+GET http://localhost/Mike => Hello Mike from swoole!
+~~~
+~~~
+ws://localhost:3000/ws/Mike => Hello Mike from ws-swoole!
+~~~
