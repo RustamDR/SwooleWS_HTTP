@@ -15,7 +15,6 @@ interface ILogger
     public function log(string $data, string $level = 'info'): void;
 
     /**
-     * Сбросить буфер
      * @return mixed
      */
     public function flush(): void;

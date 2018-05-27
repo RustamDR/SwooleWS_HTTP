@@ -34,7 +34,6 @@ abstract class OnBase
     }
 
     /**
-     * Для удобства приведем все параметры запроса к uppercase
      * @param \swoole_http_request $request
      */
     protected function requestUpperCase(\swoole_http_request &$request): void

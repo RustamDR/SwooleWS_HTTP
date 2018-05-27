@@ -3,7 +3,6 @@
 namespace app\models\repositories\driver;
 
 /**
- * Хранение в memcached
  * Class MemcachedDriver
  * @package app\models\repositories\driver
  */

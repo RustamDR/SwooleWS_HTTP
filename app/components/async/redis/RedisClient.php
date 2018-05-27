@@ -32,7 +32,6 @@ class RedisClient
     public $debug = true;
 
     /**
-     * Пул соединений
      * @var array
      */
     public $pool = array();
@@ -126,7 +125,6 @@ class RedisClient
     }
 
     /**
-     * Удалить ресурс соединения из пула соединений
      * @return RedisConnection
      */
     protected function getConnection(): RedisConnection
@@ -178,9 +176,6 @@ class RedisConnection
     /** @var callable */
     protected $callback;
 
-    /**
-     * Ожидание отправки данных
-     */
     /** @var bool */
     protected $wait_send = false;
     /** @var bool */
@@ -207,9 +202,6 @@ class RedisConnection
         $this->redis = $redis;
     }
 
-    /**
-     * Очистка данных
-     */
     function clean(): void
     {
         $this->buffer = '';
@@ -221,7 +213,6 @@ class RedisConnection
     }
 
     /**
-     * Выполнить комманду Redis
      * @param $cmd
      * @param $callback
      */

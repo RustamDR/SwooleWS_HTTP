@@ -7,7 +7,6 @@ use app\core\Application\RequestParams;
 use app\models\Sockets;
 
 /**
- * Базовый класс резолверов вебсокет команд
  * Class BaseSocketHandler
  * @package app\routes\handlers\websockets
  */

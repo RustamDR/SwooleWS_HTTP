@@ -24,7 +24,6 @@ class Bootstrap implements IBootstrap
         // HERE ANY BOOTSTRAP FOR MODELS AND SO ON...
         $container = $app->container;
 
-        // Logger должен быть забустраплен первым (пока так)
         $container->setSingleton(ILogger::class, new DummyLogger());
 
         $sockets = new Sockets(

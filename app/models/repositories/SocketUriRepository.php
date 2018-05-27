@@ -24,7 +24,6 @@ class SocketUriRepository
     }
 
     /**
-     * Uri подключения по fd
      * @param $fd
      * @return null|string
      */
@@ -34,7 +33,7 @@ class SocketUriRepository
     }
 
     /**
-     * Запомнить uri подключения по fd
+     * Socket connection uri
      * @param int $fd
      * @param string $uri
      * @return bool
@@ -45,7 +44,6 @@ class SocketUriRepository
     }
 
     /**
-     * Удалить uri по fd
      * @param int $fd
      * @return bool
      */

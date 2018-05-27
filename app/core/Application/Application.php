@@ -63,7 +63,7 @@ class Application
     }
 
     /**
-     * Инит приложения
+     * Initializing
      */
     protected function init(): void
     {
@@ -74,7 +74,7 @@ class Application
     }
 
     /**
-     * Соединение с БД
+     * Database connection
      */
     protected function dbConnect(): void
     {
@@ -89,7 +89,7 @@ class Application
     }
 
     /**
-     * Соединение с memcached
+     * Memcached connection
      */
     protected function memcachedConnect(): void
     {
@@ -129,7 +129,7 @@ class Application
     }
 
     /**
-     * Запуск приложения
+     * Run application
      */
     public function run(): void
     {
@@ -151,7 +151,7 @@ class Application
     }
 
     /**
-     * Автозагрузка
+     * Bootstrapping
      */
     protected function bootstrap(): void
     {
@@ -159,7 +159,6 @@ class Application
             call_user_func(["app\\bootstrap\\{$name}\\Bootstrap", 'execute'], $this);
         }
 
-        // Пока тут установим логгер (не очень хорошо)
         $this->logger = Container::get(ILogger::class);
     }
 }

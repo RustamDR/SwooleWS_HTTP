@@ -3,7 +3,6 @@
 namespace app\models\repositories\driver;
 
 /**
- *  Хранение в памяти
  * Class MemoryDriver
  * @package app\models\repositories\driver
  */

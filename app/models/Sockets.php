@@ -12,7 +12,7 @@ use app\models\repositories\SocketUriRepository;
 class Sockets
 {
     /**
-     * URI по fd ([fd => uri])
+     * URI by ws-id [fd => uri])
      * @var SocketUriRepository
      */
     private $socketUri;

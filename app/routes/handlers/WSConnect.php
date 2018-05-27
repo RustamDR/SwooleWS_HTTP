@@ -19,7 +19,6 @@ class WSConnect extends BaseHandler
     }
 
     /**
-     * Закрытие сокет соединения для fd
      * @inheritdoc
      */
     public function close(int $fd, RequestParams $params, callable $log): void

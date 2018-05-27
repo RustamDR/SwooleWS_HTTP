@@ -4,7 +4,7 @@ return [
 
     //*/
     'db' => false,
-    /*/'db' => [ // Опционально, [db => false]
+    /*/'db' => [
         'dsn' => 'mysql:dbname=' . getenv('MYSQL_DB') . ';host:' . getenv('MYSQL_HOST'),
         'username' => getenv('MYSQL_USER'),
         'password' => getenv('MYSQL_PASS'),
